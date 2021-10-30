@@ -1,0 +1,278 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #ffffff;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    color: #2c2c2c;
+    text-decoration: none;
+}
+
+.btn_shopping_cart:hover {
+    cursor: pointer;
+}
+
+.btn_shopping_cart:hover .shopping_cart {
+    display: block;
+}
+
+.logo_cart {
+    font-size: 20px;
+    color: #2c2c2c;
+}
+
+.shopping_cart {
+    display:  none;
+    width: 500px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.966);
+    border: 2px solid #f2f2f2;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.shopping_cart h2{
+    font-size: 17px;
+    color: #2c2c2c;
+}
+
+.card_phone_cart {
+    border: 2px solid #f0f0f0;
+    margin: 10px 0;
+    padding: 5px 20px;
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_phone_cart img {
+    width: 100px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping_cart::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+}
+/* ------ */
+
+.banner {
+    height: 600px;
+    background-image: url(../images/banner.jpg);
+    background-size: cover 100%;
+    /* background-attachment: fixed; */
+}
+
+.container_text_banner {
+    width: 40%;
+    height: 100%;
+    /* backdrop-filter: blur(20px); */
+    background: rgba(255, 255, 255, 0.219);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    width: 70%;
+}
+
+.title_banner {
+    font-size: 3.5em;
+    color: #FFFF;
+}
+
+.paragraph {
+    font-size: 17px;
+    color: #dcdcdc;
+} 
+
+/* -------- */
+
+.title {
+    max-width: 1100px;
+    margin: 3em auto;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title h1 {
+    font-size: 2.5em;
+    color: #2c2c2c;
+}
+
+#btn_open_add_products {
+    padding: 10px 20px; 
+    border: none;
+    border: 2px solid #b10909;
+    font-size: 17px;
+    color: #b10909;
+    background: #fff3f3;
+}
+
+#btn_open_add_products:hover {
+    cursor: pointer;
+}
+
+/* ---------- */
+
+.add_product {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(129, 129, 129, 0.637);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_form {
+    /* width: 400px; */
+    padding: 30px;
+    background: #FFFF;
+
+    display: flex;
+}
+
+.form {
+    width: 300px;
+    padding: 0 30px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.show_image {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #dbdbdb;
+}
+
+.input {
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.input_file {
+    padding: 10px 0;
+    margin: 5px 0;
+}
+
+#btn_add_product {
+    padding: 10px;
+    font-size: 17px;
+    background: #eeeeee;
+    border: none;
+    border: 2px solid #acacac;
+    color: #acacac;
+}
+
+/* ------------------ */
+
+.products {
+    max-width: 1200px;
+    margin: 3em auto;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Cards */
+
+.card {
+    width: 350px; 
+    margin: 5px 10px;
+    border: 2px solid #f2f2f2;
+    /* box-shadow: 0 0 20px #e8e8e8; */
+}
+
+.header_card  {
+    height: 250px;
+}
+
+.header_card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.body_card {
+    padding: 20px;
+}
+
+.price_product {
+    font-size: 30px;
+    color: #383838;
+}
+
+.name_product {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #383838;
+}
+
+.container_info_product {
+    height: 40px;
+    overflow: hidden;
+    box-shadow: inset -0px -20px 15px #ffffff;
+}
+
+.info_product {
+    position: relative;
+    z-index: -1;
+    font-size: 14px;
+    color: #646464;
+}
+
+#btn_add_cart {
+    width: 100%;
+    padding: 10px;
+    font-size: 17px;
+    background: #f5f5f5;
+    border: none;
+    border-top: 2px solid #f2f2f2;
+    color: #585858;
+}
+
+#btn_add_cart:hover {
+    cursor: pointer;
+}
+
+/* End Cards */
+
+.ocult {
+    display: none;
+}
+
+
+footer {
+    background: #eeeeee;
+    text-align: center;
+    padding: 20px;
+}
