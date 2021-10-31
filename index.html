@@ -8,23 +8,20 @@
     <title>Carrito</title>
 </head>
 <body>
+
     <header>
         <a class="logo" href="">Phones<strong>.com</strong></a>
         <div class="btn_shopping_cart">
             <i class="fas fa-shopping-bag logo_cart"></i>
         </div>
 
-        <div class="shopping_cart ">
+        <div class="shopping_cart ocult">
             <h2>Shopping cart</h2>
-            <div class="card_phone_cart">
-                <img src="images/phone1.jpg" alt="phone">                
-                <p>Samsung</p>
-                <div class="">
-                    <button>+</button>
-                    <p>5</p>
-                    <button>-</button>
-                </div>
-                <p>$ 2.344.000</p>
+
+            <div class="container_products"></div>
+
+            <div class="container_total">
+                <p class="total"></p>
             </div>
         </div>
 
@@ -34,8 +31,8 @@
         <section class="banner">
             <div class="container_text_banner">
                 <div class="info">
-                    <h1 class="title_banner">Marketplace</h1>
-                    <h1 class="title_banner">Phones</h1>
+                    <h1 class="title_banner">Marketplace Phones</h1>
+                    <!-- <h1 class="title_banner"></h1> -->
                     <p class="paragraph">Lorem ipsum dolor sit <strong> amet, consectetur adipisicing elit. </strong> Provident velit distinctio libero impedit nesciunt placeat illo architecto fuga ipsam eum. Placeat ipsum similique natus tenetur voluptates officia maiores ab accusamus!</p>
                 </div>
             </div>
@@ -46,34 +43,51 @@
                 <h1>Celulares disponibles</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quos, repellat nam !</p>
             </div>
-            <button id="btn_open_add_products"><i class="fas fa-plus"></i> <strong> Añadir productos </strong></button>
+            <button id="btn_open_add_products"><i class="fas fa-plus"></i> Agregar productos </button>
         </section>
 
         <section class="add_product ocult">
             
-            <div class="container_form">
+            <div class="message_box ocult">
+                <p>Producto agregado exitosamente</p>
+            </div>
+            <div class="container_form">              
+                <div class="title_add_products">
+                    <h1>Agregar productos</h1>
 
-                <div class="form">
-                    <input class="input" type="text" placeholder="Nombre" id="">
-                    <input class="input" type="text" placeholder="Descripcion" id="">
-                    <input class="input" type="text" placeholder="Precio" id="">
-                    <input class="input" type="number" placeholder="Cantidad" id="">
-                    <button id="btn_add_product">Añadir</button>    
-                </div>  
-
-                <div class="image">
-                    <div class="show_image">
-
+                    <div class="btn_close">
+                        <i class="fas fa-times"></i>
                     </div>
-                    <input class="input_file" type="file" name="" id="">
-                </div>       
+                </div>
+                
+                <div class="form">
+                    <div class="form_inputs">
+                        <input class="input" type="text" placeholder="Nombre" id="">
+                        <textarea class="input" name="" id="" cols="30" rows="10" placeholder="Descripcion..."></textarea>
+                        <input class="input" type="text" placeholder="Precio" id="">
+                        <input class="input" type="number" placeholder="Cantidad" id="">
+                        <button id="btn_add_product">Añadir</button>    
+                    </div>  
+
+                    <div class="image">
+                        <div class="show_image">
+
+                        </div>
+                        <div class="change_image">
+                            <label for="image_product"><i class="fas fa-image"></i> <strong> Agregar imagen</strong></label>  
+                            <input type="file" id="image_product" accept="image/*">
+                            <!-- <label for="image_product" class="input_file"></label> -->
+                        </div>
+                    </div>      
+                </div>
+
             </div>
 
         </section>
 
         <section class="products">
 
-            <div class="card">
+            <!-- <div class="card">
                 <div class="header_card">
                     <img src="images/phone1.jpg" alt="phone">                
                 </div>
@@ -155,16 +169,17 @@
                     </div>
                 </div>
                 <button id="btn_add_cart">Añadir al carrito</button>
-            </div>
-
+            </div> -->
 
         </section>
 
     </main>
+
     <footer>
         <p>Developer Cristian Camilo Velasquez &copy; 2021</p>
     </footer>
 
 <script src="https://kit.fontawesome.com/500e0cfc08.js" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

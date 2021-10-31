@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -23,53 +25,93 @@ header {
     cursor: pointer;
 }
 
-.btn_shopping_cart:hover .shopping_cart {
-    display: block;
-}
-
 .logo_cart {
-    font-size: 20px;
+    font-size: 25px;
     color: #2c2c2c;
 }
 
 .shopping_cart {
-    display:  none;
-    width: 500px;
+    width: 600px;
     position: absolute;
-    top: 0;
+    top: 69px;
+
     right: 0;
     padding: 20px;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.966);
+    background: rgba(255, 255, 255, 0.945);
     border: 2px solid #f2f2f2;
-    height: 100vh;
-    overflow-y: scroll;
+    height: 90vh;
+    /* overflow-y: scroll; */
 }
 
 .shopping_cart h2{
-    font-size: 17px;
+    font-size: 19px;
+    padding: 0 0 20px 0;
     color: #2c2c2c;
 }
 
+.container_products {
+    max-height: 85%;
+    overflow-y: scroll;
+}
+.container_products::-webkit-scrollbar {
+    width: 0px;
+}
 .card_phone_cart {
     border: 2px solid #f0f0f0;
     margin: 10px 0;
     padding: 5px 20px;
 
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.container_total {
+    padding: 10px 0;
+    border-top: 2px solid #f0f0f0;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total {
+    font-size: 25px;
+    color: #505050;
 }
 
 .card_phone_cart img {
     width: 100px;
 }
 
+.name_product_cart {
+    font-size: 18px;
+    color: #272727;
+}
+
 .actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#btn_action {
+    padding: 5px 10px;
+    background: transparent;
+    border: 2px solid #747474;
+    color: #747474;
+    font-weight: 700;
+    text-align: center;
+} 
+
+.cont {
+    padding: 10px;
+    color: #525252;
+}
+
+.price_prodcut_cart {
+    /* font-weight: 700; */
+    color: #333333;
 }
 
 .shopping_cart::-webkit-scrollbar {
@@ -100,6 +142,7 @@ header {
 }
 
 .title_banner {
+    line-height: 1;
     font-size: 3.5em;
     color: #FFFF;
 }
@@ -128,10 +171,10 @@ header {
 #btn_open_add_products {
     padding: 10px 20px; 
     border: none;
-    border: 2px solid #b10909;
+    border: 2px solid #6474ff;
     font-size: 17px;
-    color: #b10909;
-    background: #fff3f3;
+    color: #6474ff;
+    background: #f0f1ff;
 }
 
 #btn_open_add_products:hover {
@@ -148,19 +191,52 @@ header {
     background: rgba(129, 129, 129, 0.637);
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.message_box {
+    box-sizing: border-box;
+    text-align: center;
+    width: 694px;
+    padding: 5px 0;
+    background: #f0f8ed;
+    border: 2px solid #408333;
+    color: #408333;
+}
+
 .container_form {
-    /* width: 400px; */
     padding: 30px;
     background: #FFFF;
+}
+
+.title_add_products {
+    margin: 0 0 20px 0;
+    font-size: 23px;
+    color: #2c2c2c;
 
     display: flex;
+    justify-content: space-between;
+}
+
+.btn_close {
+    text-align: center;
+    padding: 5px 10px;
+    border: 2px solid #2c2c2c;
+    background: #e9e9e9;
+}
+
+.btn_close:hover {
+    cursor: pointer;
 }
 
 .form {
+    /* width: 400px; */
+    display: flex;
+}
+
+.form_inputs {
     width: 300px;
     padding: 0 30px 0 0;
     display: flex;
@@ -170,17 +246,41 @@ header {
 .show_image {
     width: 300px;
     height: 300px;
-    border: 2px solid #dbdbdb;
+    border: 2px dashed #dbdbdb;
+}
+
+.show_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .input {
     padding: 10px;
-    margin: 5px 0;
+    margin: 0 0 5px 0;
+    border: 2px solid #dbdbdb;
+    font-size: 17px;
 }
 
-.input_file {
-    padding: 10px 0;
-    margin: 5px 0;
+.input:focus {
+    outline: none;
+}
+
+.change_image input {
+    display: none;
+}
+
+.change_image label {
+    text-align: center;
+    margin: 10px 0;
+    display: block;
+    padding: 10px 20px;
+    color: #646464;
+    border: 2px solid #646464;
+}
+
+.change_image label:hover {
+    cursor: pointer;
 }
 
 #btn_add_product {
@@ -190,6 +290,16 @@ header {
     border: none;
     border: 2px solid #acacac;
     color: #acacac;
+}
+
+#btn_add_product:hover {
+    cursor: pointer;
+}
+
+#image_product {
+    margin: 20px 0;
+    width: 2000px;
+    display: none;
 }
 
 /* ------------------ */
@@ -268,8 +378,8 @@ header {
 
 .ocult {
     display: none;
+    transition: all ease 500ms;
 }
-
 
 footer {
     background: #eeeeee;
