@@ -182,14 +182,14 @@ header {
 .banner {
     height: 500px;
     background-image: url(../images/banner.jpg);
-    background-size: cover 100%;
+    background-size: cover;
     /* background-attachment: fixed; */
 }
 
 .container_text_banner {
     width: 40%;
     height: 100%;
-    /* backdrop-filter: blur(20px); */
+    backdrop-filter: blur(20px);
     background: rgba(255, 255, 255, 0.219);
 
     display: flex;
