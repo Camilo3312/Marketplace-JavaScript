@@ -51,6 +51,7 @@ header {
 .shopping_cart {
     width: 700px;
     position: absolute;
+    z-index: 1;
     top: 69px;
 
     right: 0;
