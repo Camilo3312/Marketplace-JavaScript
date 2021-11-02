@@ -21,13 +21,31 @@ header {
     text-decoration: none;
 }
 
+.btn_shopping_cart {
+    display: flex;
+    align-items: center;
+}
+
 .btn_shopping_cart:hover {
     cursor: pointer;
 }
 
 .logo_cart {
-    font-size: 25px;
+    font-size: 30px;
     color: #2c2c2c;
+}
+
+.count_products_cart {
+    position: relative;
+    top: -10px;
+    right: -10px;
+    padding:1px 5px ;
+    margin: 0 5px;
+    background: #FFFF;
+    color: #313131;
+    border: 2px solid #272727;
+    font-size: 17px;
+    text-align: center;
 }
 
 .shopping_cart {
@@ -38,15 +56,37 @@ header {
     right: 0;
     padding: 20px;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.945);
+    background: rgba(255, 255, 255, 0.952);
     border: 2px solid #f2f2f2;
     height: 90vh;
     /* overflow-y: scroll; */
 }
 
-.shopping_cart h2{
-    font-size: 19px;
+.cart_is_empty {
+    color: #c5c5c5;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart_is_empty i {
+    font-size: 5em ;
+}
+
+.cart_is_empty p {
+    font-size: 2em;
+    margin: 0.5em 0;
+}
+
+.shopping_cart p::selection {
+    background: transparent;
+}
+
+.title_cart {
     padding: 0 0 20px 0;
+    font-size: 19px;
     color: #2c2c2c;
 }
 
@@ -54,9 +94,11 @@ header {
     max-height: 85%;
     overflow-y: scroll;
 }
+
 .container_products::-webkit-scrollbar {
     width: 0px;
 }
+
 .card_phone_cart {
     border: 2px solid #f0f0f0;
     margin: 10px 0;
@@ -104,6 +146,24 @@ header {
     text-align: center;
 } 
 
+#btn_action_delete {
+    padding: 3px 10px;
+    background: #fff3f3;
+    border: 2px solid #b62d2d;
+    color: #b62d2d;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+}
+
+#btn_action:hover {
+    cursor: pointer;
+}
+
+#btn_action_delete:hover {
+    cursor: pointer;
+}
+
 .cont {
     padding: 10px;
     color: #525252;
@@ -120,7 +180,7 @@ header {
 /* ------ */
 
 .banner {
-    height: 600px;
+    height: 500px;
     background-image: url(../images/banner.jpg);
     background-size: cover 100%;
     /* background-attachment: fixed; */
@@ -384,5 +444,6 @@ header {
 footer {
     background: #eeeeee;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    color: #a5a5a5;
 }

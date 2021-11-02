@@ -11,22 +11,27 @@
 
     <header>
         <a class="logo" href="">Phones<strong>.com</strong></a>
+
         <div class="btn_shopping_cart">
+            <p class="count_products_cart">0</p>
             <i class="fas fa-shopping-bag logo_cart"></i>
         </div>
 
         <div class="shopping_cart ocult">
-            <h2>Shopping cart</h2>
+            <p class="title_cart"> <strong> Shopping cart</strong></p>
 
-            <div class="container_products"></div>
+            <div class="container_products">
+                <div class="cart_is_empty">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Cart is empty</p>
+                </div>
+            </div>
 
             <div class="container_total">
                 <p class="total"></p>
             </div>
         </div>
-
     </header>
-
     <main>
         <section class="banner">
             <div class="container_text_banner">
@@ -40,7 +45,7 @@
 
         <section class="title">         
             <div class="container_title_info"> 
-                <h1>Celulares disponibles</h1>
+                <h1>Productos disponibles</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quos, repellat nam !</p>
             </div>
             <button id="btn_open_add_products"><i class="fas fa-plus"></i> Agregar productos </button>
@@ -59,13 +64,12 @@
                         <i class="fas fa-times"></i>
                     </div>
                 </div>
-                
                 <div class="form">
                     <div class="form_inputs">
-                        <input class="input" type="text" placeholder="Nombre" id="">
-                        <textarea class="input" name="" id="" cols="30" rows="10" placeholder="Descripcion..."></textarea>
-                        <input class="input" type="text" placeholder="Precio" id="">
-                        <input class="input" type="number" placeholder="Cantidad" id="">
+                        <input class="input" type="text" id="txt_name" placeholder="Nombre">
+                        <textarea class="input" name="" id="txt_descriptcion" placeholder="Descripcion..."></textarea>
+                        <input class="input" type="number" id="txt_price" placeholder="Precio">
+                        <input class="input" type="number" id="txt_cuanty" placeholder="Cantidad">
                         <button id="btn_add_product">Añadir</button>    
                     </div>  
 
@@ -86,91 +90,6 @@
         </section>
 
         <section class="products">
-
-            <!-- <div class="card">
-                <div class="header_card">
-                    <img src="images/phone1.jpg" alt="phone">                
-                </div>
-                <div class="body_card">
-                    <p class="price_product">$ 2.344.000</p>
-                    <p class="name_product">Samsung Galaxi fold</p>
-                    <div class="container_info_product">
-                        <p class="info_product">Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsa blanditiis quae est quos mollitia nesciunt ipsum incidunt ea totam. ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, suscipit.</p>
-                    </div>
-                </div>
-                <button id="btn_add_cart">Añadir al carrito</button>
-            </div>            
-
-            <div class="card">
-                <div class="header_card">
-                    <img src="images/phone2.jpg" alt="phone">                
-                </div>
-                <div class="body_card">
-                    <p class="price_product">$ 2.344.000</p>
-                    <p class="name_product">Samsung Galaxi fold</p>
-                    <div class="container_info_product">
-                        <p class="info_product">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, suscipit.</p>
-                    </div>
-                </div>
-                <button id="btn_add_cart">Añadir al carrito</button>
-            </div>
-
-            <div class="card">
-                <div class="header_card">
-                    <img src="images/phone4.jpg" alt="phone">                
-                </div>
-                <div class="body_card">
-                    <p class="price_product">$ 2.344.000</p>
-                    <p class="name_product">Samsung Galaxi fold</p>
-                    <div class="container_info_product">
-                        <p class="info_product">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, suscipit.</p>
-                    </div>
-                </div>
-                <button id="btn_add_cart">Añadir al carrito</button>
-            </div>
-
-            <div class="card">
-                <div class="header_card">
-                    <img src="images/phone5.jpg" alt="phone">                
-                </div>
-                <div class="body_card">
-                    <p class="price_product">$ 2.344.000</p>
-                    <p class="name_product">Samsung Galaxi fold</p>
-                    <div class="container_info_product">
-                        <p class="info_product">Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsa blanditiis quae est quos mollitia nesciunt ipsum incidunt ea totam. ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, suscipit.</p>
-                    </div>
-                </div>
-                <button id="btn_add_cart">Añadir al carrito</button>
-            </div>
-
-            <div class="card">
-                <div class="header_card">
-                    <img src="images/phone1.jpg" alt="phone">                
-                </div>
-                <div class="body_card">
-                    <p class="price_product">$ 2.344.000</p>
-                    <p class="name_product">Samsung Galaxi fold</p>
-                    <div class="container_info_product">
-                        <p class="info_product">Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsa blanditiis quae est quos mollitia nesciunt ipsum incidunt ea totam. ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, suscipit.</p>
-                    </div>
-                </div>
-                <button id="btn_add_cart">Añadir al carrito</button>
-            </div>
-
-            <div class="card">
-                <div class="header_card">
-                    <img src="images/phone1.jpg" alt="phone">                
-                </div>
-                <div class="body_card">
-                    <p class="price_product">$ 2.344.000</p>
-                    <p class="name_product">Samsung Galaxi fold</p>
-                    <div class="container_info_product">
-                        <p class="info_product">Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsa blanditiis quae est quos mollitia nesciunt ipsum incidunt ea totam. ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, suscipit.</p>
-                    </div>
-                </div>
-                <button id="btn_add_cart">Añadir al carrito</button>
-            </div> -->
-
         </section>
 
     </main>

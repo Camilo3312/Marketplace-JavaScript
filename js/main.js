@@ -5,7 +5,6 @@ const btn_open_add_products = document.querySelector('#btn_open_add_products');
 const add_product = document.querySelector('.add_product');
 const btn_close = document.querySelector('.btn_close');
 const image_product = document.querySelector('#image_product');
-// const btn_add_product = document.querySelector('#btn_add_product'); 
 const show_image = document.querySelector('.show_image');  
 const container_products = document.querySelector('.products');   
 const container_products_cart = document.querySelector('.container_products');   
@@ -13,19 +12,31 @@ const message_box = document.querySelector('.message_box');
 const btn_shopping_cart = document.querySelector('.btn_shopping_cart');   
 const shopping_cart = document.querySelector('.shopping_cart');   
 const show_total = document.querySelector('.total');   
+const count_products_cart = document.querySelector('.count_products_cart');   
+
+const txt_name = document.querySelector('#txt_name');   
+const txt_descriptcion = document.querySelector('#txt_descriptcion');   
+const txt_price = document.querySelector('#txt_price');   
+const txt_cuanty = document.querySelector('#txt_cuanty');   
 
 const show = (element) => {
     element.classList.toggle('ocult');
 }
-total = 0;
 
 const calcTotal = () => {
+    let total = 0;
 
-    products.forEach(product => {
-        total = total + parseInt(product.price);
-    });
-
-    show_total.textContent = 'Total: $' + total;
+    cart.forEach(product => {
+        products_cart = products.filter(item => {
+            return product.id === item.id;
+        });
+        if(product.id === products_cart[0].id) {
+            total = total + products_cart[0].price * product.cuanty
+        }
+    })
+    
+    show_total.textContent = 'Total $'+ total;
+    console.log(total);
 }
 
 const addProducts = (product) => {
@@ -61,9 +72,10 @@ const addCart = (e) => {
             cart.push(product);
         }
     }  
-
+    
     calcTotal();
     showCart();
+    count_products_cart.textContent = cart.length;
 }
 
 const removeCart = (e) => {
@@ -79,7 +91,17 @@ const removeCart = (e) => {
         }
     };
 
+    calcTotal();
     showCart();
+}
+
+const deleteCart = (e) => {
+    cart = cart.filter(item => {
+        return item.id !== parseInt(e.target.getAttribute('id_product'));
+    });
+    calcTotal();
+    showCart();
+    count_products_cart.textContent = cart.length;
 }
 
 const showProducts = () => {
@@ -135,6 +157,7 @@ const showCart = () => {
         });
 
         const card_phone_cart = document.createElement('div');
+        const delete_product = document.createElement('button');
         const image_product_cart = document.createElement('img');
         const name_product_cart = document.createElement('p');
         const actions = document.createElement('div');
@@ -149,17 +172,21 @@ const showCart = () => {
         actions.classList.add('actions');
         quit_product.setAttribute('id','btn_action');
         add_prodcut.setAttribute('id','btn_action');
+        delete_product.setAttribute('id','btn_action_delete');
         quit_product.setAttribute('id_product', product.id);
         add_prodcut.setAttribute('id_product', product.id);
+        delete_product.setAttribute('id_product', product.id);
         cont.classList.add('cont');
         price_product_cart.classList.add('price_prodcut_cart');
 
+        delete_product.addEventListener('click', deleteCart);
         add_prodcut.addEventListener('click', addCart);
         quit_product.addEventListener('click', removeCart);
 
         name_product_cart.textContent = products_cart[0].name;
         add_prodcut.textContent = '+';
         quit_product.textContent = '-';
+        delete_product.textContent = 'x';
         cont.textContent = product.cuanty;
         price_product_cart.textContent = '$ ' + parseInt(products_cart[0].price * product.cuanty);
 
@@ -167,6 +194,7 @@ const showCart = () => {
         actions.appendChild(cont);
         actions.appendChild(add_prodcut);
 
+        card_phone_cart.appendChild(delete_product);
         card_phone_cart.appendChild(image_product_cart);
         card_phone_cart.appendChild(name_product_cart);
         card_phone_cart.appendChild(actions);
@@ -174,7 +202,6 @@ const showCart = () => {
 
         container_products_cart.appendChild(card_phone_cart);
 
-        calcTotal();
     });
 }
 
@@ -192,9 +219,9 @@ btn_add_product.addEventListener('click', () => {
     cont += 1;
     product = {
         id: cont,
-        price: 2344000,
-        name: 'Samsung Galaxi fold',
-        description: 'Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsa blanditiis quae est',
+        price: parseInt(txt_price.value),
+        name: txt_name.value,
+        description: txt_descriptcion.value,
         cuanty: 20,
         image: image
     };
