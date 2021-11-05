@@ -59,8 +59,7 @@ const addCart = (e) => {
         let state = false;
         for(let product of cart) {
             if(product.id === id_product) {
-                product.cuanty += 1;
-                state = false;
+                product.cuanty += 1;                
                 break;
             }
             else {
